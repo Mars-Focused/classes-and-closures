@@ -66,16 +66,28 @@ const callJake = callFriend('Jake')
 
 //Code Here
 
-function makeCounter() {
-  
+// function makeCounter(i) {
+//   function step(i) {
+//     count += 1
+//   }
+//   return count
+// }
+
+function makeCounter(){
+  let number = 0
+
+  return function(){
+    number++
+    return number
+  }
 }
 
 //Uncomment this once you make your function
-//   var count = makeCounter();
-//   count(); // 1
-//   count(); // 2
-//   count(); // 3
-//   count(); // 4
+  var count = makeCounter();
+  count(); // 1
+  count(); // 2
+  count(); // 3
+  count(); // 4
 
 
 
