@@ -128,7 +128,7 @@ class ProgressiveManager extends Manager{
     if (this.reports.length === 0){
      this.title = 'Not a manager'
     }
-    if (this.reports.length >= 1 && this.reports.length <= 3 ){
+    else if (this.reports.length >= 1 && this.reports.length <= 3 ){
       this.title = 'Barely Manager'
     }
     else if (this.reports.length >= 4 && this.reports.length <= 10 ){
