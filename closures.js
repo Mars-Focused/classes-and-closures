@@ -106,15 +106,22 @@ function counterFactory(value) {
   // Code here.
 
   return {
-
+    inc: () => {
+     value += 1
+     return value
+    },
+    dec: () => {
+      value -= 1
+      return value
+    }
   };
 }
 
 counter = counterFactory(10);
-// counter.inc() // 11
-// counter.inc() // 12
-// counter.inc() // 13
-// counter.dec() // 12
+counter.inc() // 11
+counter.inc() // 12
+counter.inc() // 13
+counter.dec() // 12
 
 
 
@@ -130,9 +137,13 @@ function motivation( firstname, lastname ) {
   var welcomeText = "You're doing awesome, keep it up";
 
   // code message function here.
-
-  //Uncommment this to return the value of your message function
-  //return message;
+  let message = ''
+  return function(){
+    message = `${welcomeText} ${firstname} ${lastname}.`
+    
+    //Uncommment this to return the value of your message function
+    return message;
+  }
 }
 
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
@@ -161,8 +172,13 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
+    publicMethod() {
+      return privateMethod()
+    } 
   };
-})();
+}) 
+
+module.privateMethod();
 
 
 
