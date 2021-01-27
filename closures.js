@@ -172,15 +172,11 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
-    publicMethod() {
-      return privateMethod()
-    } 
+    publicMethod: privateMethod
   };
-}) 
+})();
 
-module.privateMethod();
-
-
+module.publicMethod()
 
 ////////// PROBLEM 7 //////////
 
@@ -196,6 +192,15 @@ function secretNumber() {
 
   return {
     // Code here
+    addToSecret: function(number){
+      secret = secret + number
+      return secret
+    },
+
+    takeAwayFromSecret: function(number){
+      secret = secret - number
+      return secret
+    }
   };
 }
 
@@ -219,6 +224,7 @@ function secretNumber() {
   Fix the code below to log the desired output.
 */
 
+//this is the strangest way to do this BTW!
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
     setTimeout(function() {
@@ -226,4 +232,5 @@ function timeOutCounter() {
     }, i * 1000);
   }
 }
+
 timeOutCounter();
